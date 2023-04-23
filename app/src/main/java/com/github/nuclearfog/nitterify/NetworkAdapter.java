@@ -2,7 +2,7 @@ package com.github.nuclearfog.nitterify;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.view.LayoutInflater;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -55,11 +55,14 @@ public class NetworkAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		if (convertView == null) {
-			convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dropdown, parent, false);
+		TextView text;
+		if (convertView instanceof TextView) {
+			text = (TextView) convertView;
+		} else {
+			text = new TextView(parent.getContext());
+			text.setTextSize(TypedValue.COMPLEX_UNIT_PX, parent.getContext().getResources().getDimensionPixelSize(R.dimen.text_size_dropdown));
+			text.setSingleLine(true);
 		}
-		TextView text = convertView.findViewById(R.id.item_network);
-
 		final String[] item = items.get(position);
 		text.setText(item[0]);
 		return text;

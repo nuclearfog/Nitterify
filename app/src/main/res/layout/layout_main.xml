@@ -10,7 +10,8 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/label_network_selector"
-		android:textSize="@dimen/text_size_label"/>
+		android:textSize="@dimen/text_size_label"
+		android:maxLines="2" />
 
 	<Spinner
 		android:id="@+id/network_selector"

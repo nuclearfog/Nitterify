@@ -11,11 +11,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Dropdown adapter used to show network instances
+ *
+ * @author nuclearfog
+ */
 public class NetworkAdapter extends BaseAdapter {
 
 	private List<String[]> items = new ArrayList<>();
 
+	/**
+	 *
+	 */
 	public NetworkAdapter(Context context) {
 		TypedArray tArray = context.getResources().obtainTypedArray(R.array.dropdown_selection);
 		for (int i = 0 ; i < tArray.length() ; i++) {
@@ -33,15 +40,18 @@ public class NetworkAdapter extends BaseAdapter {
 		return items.size();
 	}
 
+
 	@Override
 	public String[] getItem(int position) {
 		return items.get(position);
 	}
 
+
 	@Override
 	public long getItemId(int position) {
 		return position;
 	}
+
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -55,7 +65,12 @@ public class NetworkAdapter extends BaseAdapter {
 		return text;
 	}
 
-
+	/**
+	 * get index of a string
+	 *
+	 * @param selection selection string to search
+	 * @return index of the item or 0 if not found
+	 */
 	public int indexOf(String selection) {
 		for (int i = 0 ; i < getCount() ; i++) {
 			String[] item = items.get(i);

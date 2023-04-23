@@ -11,11 +11,16 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
+/**
+ * Main activity of this application, used to show network selector and handle link conversion
+ *
+ * @author nuclearfog
+ */
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
 	private SharedPreferences settings;
 	private NetworkAdapter adapter;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 		settings = getSharedPreferences("settings", MODE_PRIVATE);
 		String domain = settings.getString("domain", "https://nitter.net");
 
+		// open Twitter link
 		if (getIntent().getData() != null) {
 			String url = domain + getIntent().getData().getPath();
 			Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -33,7 +39,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 				Toast.makeText(getApplicationContext(), R.string.error_open_link, Toast.LENGTH_SHORT).show();
 			}
 			finish();
-		} else {
+		}
+		// create network selector view
+		else {
 			setContentView(R.layout.layout_main);
 			Spinner selector = findViewById(R.id.network_selector);
 			adapter = new NetworkAdapter(getApplicationContext());

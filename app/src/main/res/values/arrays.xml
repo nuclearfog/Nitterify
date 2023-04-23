@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="select_nitter">
+		<item>Nitter &#127465;&#127466; </item>
+		<item>https://nitter.net</item>
+	</string-array>
+
+	<string-array name="select_none">
+		<item>Bypass</item>
+		<item>https://twitter.com</item>
+	</string-array>
+
+	<integer-array name="dropdown_selection">
+		<item>@array/select_nitter</item>
+		<item>@array/select_none</item>
+	</integer-array>
+
+</resources>

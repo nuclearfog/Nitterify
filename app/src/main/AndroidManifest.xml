@@ -9,7 +9,7 @@
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
 		android:theme="@style/Nitterify"
-		tools:targetApi="31" >
+		tools:targetApi="34" >
 	
 		<activity android:name=".MainActivity"
 			android:exported="true">
@@ -23,8 +23,12 @@
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:scheme="https" android:host="twitter.com" android:pathPattern=".*" />
-				<data android:scheme="https" android:host="mobile.twitter.com" android:pathPattern=".*" />
+				<data android:scheme="https"/>
+                <data android:host="twitter.com"/>
+				<data android:host="mobile.twitter.com"/>
+				<data android:host="x.com"/>
+				<data android:host="mobile.x.com"/>
+                <data android:pathPattern=".*"/>
 
 			</intent-filter>
 

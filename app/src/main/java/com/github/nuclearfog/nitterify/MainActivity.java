@@ -28,7 +28,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 		settings = getSharedPreferences("settings", MODE_PRIVATE);
 		String domain = settings.getString("domain", "https://nitter.net");
 
-		// open Twitter link
+		// open link
 		if (getIntent().getData() != null) {
 			String url = domain + getIntent().getData().getPath();
 			Intent intent = new Intent(Intent.ACTION_VIEW);

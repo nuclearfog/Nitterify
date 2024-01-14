@@ -5,10 +5,10 @@
 	<string name="error_open_link">could not open link!</string>
 	<string name="hint_url">Nitter url e.g. https://nitter.net</string>
 	<string name="error_wrong_url">wrong URL format!</string>
-	<string name="title_open_with">open with</string>
 	<string name="description_button">save instance url</string>
+	<string name="info_instance_set">instance url saved</string>
 	<!-- instance for nitter.net -->
-	<string name="select_nitter">Nitter</string>
+	<string name="select_nitter" translatable="false">Nitter</string>
 	<!-- instance for nitter.net -->
 	<string name="custom_instance">custom instance</string>
 </resources>

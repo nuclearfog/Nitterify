@@ -31,7 +31,6 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:visibility="invisible"
 			android:importantForAutofill="no"
 			android:inputType="textUri"
 			android:background="@android:color/transparent"
@@ -44,7 +43,6 @@
 			android:id="@+id/network_confirm"
 			android:layout_width="@dimen/button_size"
 			android:layout_height="@dimen/button_size"
-			android:visibility="invisible"
 			android:src="@android:drawable/ic_menu_save"
 			android:contentDescription="@string/description_button" />
 

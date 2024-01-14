@@ -1,49 +1,42 @@
 package com.github.nuclearfog.nitterify;
 
-import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Dropdown adapter used to show network instances
+ * Dropdown adapter used to show network options
  *
  * @author nuclearfog
  */
 public class NetworkAdapter extends BaseAdapter {
 
-	private List<String[]> items = new ArrayList<>();
+	public static final int INDEX_DEFAULT = 0;
+	public static final int INDEX_CUSTOM = 1;
+
+	private int[] itemRes;
 
 	/**
 	 *
 	 */
-	public NetworkAdapter(Context context) {
-		TypedArray tArray = context.getResources().obtainTypedArray(R.array.dropdown_selection);
-		for (int i = 0 ; i < tArray.length() ; i++) {
-			int resId = tArray.getResourceId(i, 0);
-			if (resId != 0) {
-				items.add(context.getResources().getStringArray(resId));
-			}
-		}
-		tArray.recycle();
+	public NetworkAdapter() {
+		itemRes = new int[2];
+		itemRes[INDEX_DEFAULT] = R.string.select_nitter;
+		itemRes[INDEX_CUSTOM] = R.string.custom_instance;
 	}
 
 
 	@Override
 	public int getCount() {
-		return items.size();
+		return itemRes.length;
 	}
 
 
 	@Override
-	public String[] getItem(int position) {
-		return items.get(position);
+	public Integer getItem(int position) {
+		return itemRes[position];
 	}
 
 
@@ -63,24 +56,7 @@ public class NetworkAdapter extends BaseAdapter {
 			text.setTextSize(TypedValue.COMPLEX_UNIT_PX, parent.getContext().getResources().getDimensionPixelSize(R.dimen.text_size_dropdown));
 			text.setSingleLine(true);
 		}
-		final String[] item = items.get(position);
-		text.setText(item[0]);
+		text.setText(getItem(position));
 		return text;
-	}
-
-	/**
-	 * get index of a string
-	 *
-	 * @param selection selection string to search
-	 * @return index of the item or 0 if not found
-	 */
-	public int indexOf(String selection) {
-		for (int i = 0 ; i < getCount() ; i++) {
-			String[] item = items.get(i);
-			if (item != null && item.length == 2 && selection.equals(item[1])) {
-				return i;
-			}
-		}
-		return 0;
 	}
 }

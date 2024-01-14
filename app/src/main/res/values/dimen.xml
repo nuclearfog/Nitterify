@@ -4,4 +4,6 @@
 	<dimen name="layout_padding">10dp</dimen>
 	<dimen name="text_size_label">24sp</dimen>
 	<dimen name="text_size_dropdown">22sp</dimen>
+	<dimen name="text_size_input">22sp</dimen>
+	<dimen name="button_size">48sp</dimen>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -17,5 +18,36 @@
 		android:id="@+id/network_selector"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
+
+	<LinearLayout
+		android:id="@+id/network_input_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<EditText
+			android:id="@+id/network_input"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="invisible"
+			android:importantForAutofill="no"
+			android:inputType="textUri"
+			android:background="@android:color/transparent"
+			android:lines="1"
+			android:textSize="@dimen/text_size_input"
+			tools:ignore="LabelFor"
+			android:hint="@string/hint_url"/>
+
+		<ImageButton
+			android:id="@+id/network_confirm"
+			android:layout_width="@dimen/button_size"
+			android:layout_height="@dimen/button_size"
+			android:visibility="invisible"
+			android:src="@android:drawable/ic_menu_save"
+			android:contentDescription="@string/description_button" />
+
+	</LinearLayout>
 
 </LinearLayout>

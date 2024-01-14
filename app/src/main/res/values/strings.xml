@@ -1,19 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Nitterify</string>
-
 	<string name="label_network_selector">Select Nitter instance</string>
 	<string name="error_open_link">could not open link!</string>
 	<string name="hint_url">Nitter url e.g. https://nitter.net</string>
 	<string name="error_wrong_url">wrong URL format!</string>
 	<string name="title_open_with">open with</string>
-
 	<string name="description_button">save instance url</string>
-
-
 	<!-- instance for nitter.net -->
 	<string name="select_nitter">Nitter</string>
-
 	<!-- instance for nitter.net -->
 	<string name="custom_instance">custom instance</string>
-
 </resources>

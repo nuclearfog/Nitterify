@@ -49,7 +49,6 @@ public class MainActivity extends Activity implements OnClickListener, OnItemSel
 	}
 
 
-
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.network_confirm) {

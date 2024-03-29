@@ -41,12 +41,20 @@ public class AppSettings {
 		mode = settings.getInt(SETTINGS_MODE, MODE_DEFAULT);
 	}
 
-
+	/**
+	 * get redirect mode
+	 *
+	 * @return {@link #MODE_DEFAULT,#MODE_CUSTOM}
+	 */
 	public int getMode() {
 		return mode;
 	}
 
-
+	/**
+	 * set redirect mode
+	 *
+	 * @param mode redirect mode {@link #MODE_DEFAULT,#MODE_CUSTOM}
+	 */
 	public void setMode(int mode) {
 		this.mode = mode;
 		settings.edit().putInt(SETTINGS_MODE, mode).apply();

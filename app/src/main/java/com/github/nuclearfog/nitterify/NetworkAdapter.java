@@ -13,7 +13,14 @@ import android.widget.TextView;
  */
 public class NetworkAdapter extends BaseAdapter {
 
+	/**
+	 * item index of the "default nitter instance" entry
+	 */
 	public static final int INDEX_DEFAULT = 0;
+
+	/**
+	 * item index of the "custom nitter instance" entry
+	 */
 	public static final int INDEX_CUSTOM = 1;
 
 	private int[] itemRes;

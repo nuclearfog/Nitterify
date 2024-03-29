@@ -56,16 +56,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemSel
 		if (v.getId() == R.id.network_confirm) {
 			String url = urlInput.getText().toString();
 			if (Patterns.WEB_URL.matcher(url).matches()) {
-				// reformat url
-				if (url.startsWith("http://"))
-					url = "https://" + url.substring(7);
-				else if (!url.startsWith("https://"))
-					url = "https://" + url;
-				int index = url.indexOf("/", 8);
-				if (index >= 8)
-					url = url.substring(0, index);
 				urlInput.setText(url);
-				// save url
 				settings.setDomain(url);
 				settings.setMode(AppSettings.MODE_CUSTOM);
 				Toast.makeText(getApplicationContext(), R.string.info_instance_set, Toast.LENGTH_SHORT).show();

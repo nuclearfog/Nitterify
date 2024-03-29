@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Nitterify</string>
+	<string name="app_name" translatable="false">Nitterify</string>
 	<string name="label_network_selector">Select Nitter instance</string>
 	<string name="error_open_link">could not open link!</string>
 	<string name="hint_url">Nitter url e.g. https://nitter.net</string>

@@ -8,27 +8,32 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 /**
- * Activity used to redirect Twitter/X links
+ * Activity used to redirect to nitter instance
  *
  * @author nuclearfog
  */
 public class RedirectActivity extends Activity {
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AppSettings settings = AppSettings.get(getApplicationContext());
-
+		// fetch url to redirect
 		if (getIntent().getData() != null) {
-			String url;
+			Uri redirectUrl;
+			String path = getIntent().getData().getPath();
 			if (settings.getMode() == AppSettings.MODE_CUSTOM) {
-				url = settings.getDomain() + getIntent().getData().getPath();
+				redirectUrl = Uri.parse(settings.getDomain() + path);
+				if (redirectUrl.getScheme() == null)   {
+					redirectUrl = Uri.parse("https://" + settings.getDomain() + path);
+				}
 			} else {
-				url = "https://nitter.net" + getIntent().getData().getPath();
+				redirectUrl = Uri.parse("https://nitter.net" + path);
 			}
 			Intent intent = new Intent(Intent.ACTION_VIEW);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			intent.setData(Uri.parse(url));
+			intent.setData(redirectUrl);
 			try {
 				getApplicationContext().startActivity(intent);
 			} catch (ActivityNotFoundException exception) {

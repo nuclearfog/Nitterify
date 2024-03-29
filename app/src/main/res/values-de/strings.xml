@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Nitterify</string>
-	<string name="label_network_selector">Nitter-Instanz auswählen</string>
+    <string name="label_network_selector">Nitter-Instanz auswählen</string>
 	<string name="error_open_link">Link konnte nicht geöffnet werden!</string>
 	<string name="hint_url">Nitter-URL z.B. https://nitter.net</string>
-	<string name="error_wrong_url">Falsches URL-Format!</string>
+	<string name="error_wrong_url">Ungültige URL!</string>
 	<string name="description_button">Instanz-URL sichern</string>
 	<string name="info_instance_set">Instanz-URL gesichert</string>
 	<string name="custom_instance">Benutzerdefinierte Instanz</string>
